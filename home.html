@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+        <img src="okok.png" alt="Logo ABA PRO" class="header-logo">
+        <h1 id="welcomeMessage">Bienvenue !</h1>
+    </header>
+
+    <nav class="sidebar">
+        <ul>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#contact">Nous contacter</a></li>
+            <li><a href="register.html">Changer de compte</a></li>
+            <li><a href="#" id="logoutButton">Déconnexion</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p>Bienvenue sur votre compte. Profitez de nos fonctionnalités !</p>
+    </main>
+
+    <script>
+        // Charger les données de l'utilisateur connecté
+        const user = JSON.parse(localStorage.getItem('currentUser'));
+        if (user) {
+            document.getElementById('welcomeMessage').textContent = `Bienvenue, ${user.firstname} ${user.lastname} !`;
+        }
+
+        // Gestion de la déconnexion
+        document.getElementById('logoutButton').addEventListener('click', function () {
+            localStorage.removeItem('currentUser'); // Supprimer les données de l'utilisateur
+            window.location.href = 'register.html'; // Rediriger vers la page d'inscription
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="style.css"> <!-- Pour réutiliser votre CSS existant -->
+</head>
+<body>
+
+    <header class="header">
+        <button class="back-button" onclick="window.history.back();">&larr; Retour</button>
+        
+        <!-- Image au milieu -->
+        <img src="okok.png" alt="Logo ABA PRO" class="header-logo">
+        
+        <h1>Inscription</h1>
+    </header>
+    <div class="message-red">
+        Désolé, cette option n'est pas disponible pour le moment.
+    </div>
+    
+    <main>
+        <form action="/submit-registration" method="POST" class="registration-form">
+            <h2>Formulaire d'inscription</h2>
+            
+            <label for="username">Nom d'utilisateur :</label>
+            <input type="text" id="username" name="username" placeholder="Entrez votre nom d'utilisateur" required>
+            
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+            
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" minlength="6" required>
+            
+            <label for="confirm-password">Confirmez le mot de passe :</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmez votre mot de passe" required>
+            
+            <button type="submit">S'inscrire</button>
+        </form>
+    </main>
+    
+</body>
+</html>
